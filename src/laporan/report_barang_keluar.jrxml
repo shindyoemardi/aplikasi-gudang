@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="532c42c0-7d97-49ca-811d-903a0d4b3bff">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select  *  from barang_keluar]]>
+	</queryString>
+	<field name="kode_barang_keluar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kode_barang_masuk" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement uuid="8a85ef4e-acd9-44ca-a4f9-b73cddca6ced" x="275" y="0" width="300" height="64"/>
+				<imageExpression><![CDATA["leaf_banner_violet.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="75cd7836-bc09-4e7e-8c66-46929f82c770" style="Title" x="0" y="13" width="296" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Laporan Barang Keluar]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="1c831f0b-2e35-48ba-8282-82a3ae884d34" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d5fdfe99-d292-4448-ae35-1364feee0d36" style="Column header" x="0" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[kode_barang_keluar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="094a70dc-9857-4340-aee2-0ce4cc508655" style="Column header" x="111" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[kode_barang_masuk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bfba3b79-0a7f-4dc5-a479-e3cf0b5f676e" style="Column header" x="222" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aafea05e-d1b3-4540-bd50-e8a46c5167fa" style="Column header" x="333" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[tgl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f26b4b1-a11c-4e94-ace4-fe650df9b868" style="Column header" x="444" y="19" width="111" height="15"/>
+				<textElement/>
+				<text><![CDATA[keterangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="731abbf2-5463-40fd-836e-d1161df34518" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="ccdac612-6a1a-4b86-897e-8ce009b442f2" style="Detail" x="0" y="0" width="111" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kode_barang_keluar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="449a86df-d905-4684-ba8c-2aea0a6b6a14" style="Detail" x="111" y="0" width="111" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{kode_barang_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1f1bb91a-24c4-47c8-88a1-db213d03fe3d" style="Detail" x="222" y="0" width="111" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="afc8d269-6e30-4f68-b167-7123e4e12fc5" style="Detail" x="333" y="0" width="111" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tgl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f301650-9c83-496d-82da-0c7c70aa197f" style="Detail" x="444" y="0" width="111" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="7ee93fe9-a088-467b-b97e-620568183446" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="f07f7dcd-36af-4fd0-9f85-19a616e7cc22" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="00a62b8c-7f8f-444b-b178-e215cf88f6ce" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="95568920-8586-47cc-91e2-1add0f815d48" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
